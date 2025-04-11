@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Happy Diwali 2020</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+</html>
+<body>
+	<section class="fireworks" id="sec1"></section>
+	<section class="content" id="sec2">
+		<h2>
+			 <c>Wishing you a <br>happy, Safe</c>
+		</h2>
+	</section>
+	<section class="content" id="sec3">
+		<h2>
+			<c>and joyful Diwali</c> <br>
+			
+		</h2>
+	</section>
+	<section class="content" id="sec4">
+		<h2>
+			<c>Lighten up the Crackers and say...</c>
+		</h2>
+	</section>
+    <section class="content" id="sec4">
+		<h2 class="wish">
+			Happy Diwali
+		</h2>
+	</section>
+	<section class="content" id="sec5">
+		<h2 class="pic">
+			@titan_.dev
+		</h2>
+	</section>
+	
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript">
+		$('.fireworks').fireworks({ 
+		  sound: true, // sound effect
+		  opacity: 0.9, 
+		  width: '100%', 
+		  height: '100%' 
+		});
+
+             // JavaScript to display each section one after another without overlapping
+        const sections = document.querySelectorAll('section.content');
+        let currentIndex = 0;
+
+        function showNextSection() {
+            // Hide current section
+            sections[currentIndex].style.visibility = "hidden";
+
+            // Increment index and loop back to start if at the end
+            currentIndex = (currentIndex + 1) % sections.length;
+
+            // Show next section
+            sections[currentIndex].style.visibility = "visible";
+            sections[currentIndex].style.animation = `fadeIn 2s ease forwards`;
+
+            // Set a timeout for the next section
+            setTimeout(showNextSection, 3000); // Adjust timing as needed
+        }
+
+        // Start the loop
+        showNextSection();
+	</script>
+</body>
+</html>

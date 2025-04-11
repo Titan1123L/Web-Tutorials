@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Reveal Image with Background Color Change</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Extra height for vertical scrolling */
+            overflow-x: hidden; /* Hide horizontal overflow */
+            background: #111; /* Initial background color */
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease; /* Smooth transition for background color */
+        }
+
+        .text-container {
+            position: fixed; /* Keeps text in the center of the viewport */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .masked-text {
+            font-size: 5rem;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(90deg, #ff4e50, #f9d423); /* Initial gradient color */
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 200% 100%; /* Double the width to allow horizontal scrolling effect */
+            transition: background-position 0.5s ease; /* Smooth transition for background */
+        }
+
+        .masked-text.image-background {
+            background-image: url('MOUNTAINS.jpeg'); /* Add image as background */
+            background-size: 200% 100%; /* Ensure the image covers the text */
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <h1 class="masked-text">Scroll to Reveal</h1>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const maskedText = document.querySelector('.masked-text');
+            const body = document.body;
+
+            const revealImageOnScroll = () => {
+                const scrollPosition = window.scrollY; // Get vertical scroll position
+                const windowHeight = window.innerHeight; // Height of the viewport
+                const maxScrollHeight = document.body.scrollHeight - windowHeight; // Maximum scroll height
+                const scrollPercentage = scrollPosition / maxScrollHeight; // Calculate scroll percentage
+
+                // Apply the background position to create the left-to-right reveal effect
+                maskedText.style.backgroundPosition = `${scrollPercentage * 100}% center`;
+
+                // Change the background color from black to white based on scroll
+                const newBackgroundColor = `rgb(${Math.floor(255 * scrollPercentage)}, ${Math.floor(255 * scrollPercentage)}, ${Math.floor(255 * scrollPercentage)})`;
+                body.style.backgroundColor = newBackgroundColor; // Apply new background color
+
+                // Add the class for the image background after a certain scroll point
+                if (scrollPosition > 0) {
+                    maskedText.classList.add('image-background');
+                } else {
+                    maskedText.classList.remove('image-background');
+                }
+            };
+
+            window.addEventListener('scroll', revealImageOnScroll);
+            revealImageOnScroll(); // Initial call to set the correct background on page load
+        });
+    </script>
+</body>
+</html>

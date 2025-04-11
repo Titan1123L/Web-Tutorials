@@ -1,0 +1,64 @@
+body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out forwards 3s, pulse 2s infinite 5s;
+}
+
+.heart-text span {
+    background: linear-gradient(90deg, #ff005d, #ff0099, #ff7bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s infinite;
+}
+
+/* Fade-in Text */
+@keyframes fadeInText {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Gradient Shift */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Pulse Effect */
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        text-shadow: 0 0 10px #ff005d, 0 0 20px #ff0099, 0 0 30px #ff7bff;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        text-shadow: 0 0 20px #ff005d, 0 0 40px #ff0099, 0 0 60px #ff7bff;
+    }
+}

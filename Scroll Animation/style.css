@@ -1,0 +1,36 @@
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* Extra height for scrolling */
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    font-family: Arial, sans-serif;
+}
+
+.text-container {
+    position: fixed; /* Keeps text in the center of the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.masked-text {
+    font-size: 5rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, #ff4e50, #f9d423); /* Initial gradient color */
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background 0.5s ease;
+}
+
+.masked-text.image-background {
+    background: url('MOUNTAINS.jpeg') no-repeat center center;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+}

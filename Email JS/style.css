@@ -1,0 +1,123 @@
+ /* Importing Font */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     background: linear-gradient(135deg, #e9eff5 25%, #c0d7e5 25%, #c0d7e5 50%, #e9eff5 50%, #e9eff5 75%, #c0d7e5 75%, #c0d7e5) repeat;
+     background-size: 150% 150%;
+     animation: gradient 10s ease infinite;
+ }
+
+ @keyframes gradient {
+     0% { background-position: 0% 0%; }
+     50% { background-position: 100% 100%; }
+     100% { background-position: 0% 0%; }
+ }
+
+ .container {
+     display: flex;
+     max-width: 900px;
+     width: 100%;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+     border-radius: 8px;
+     overflow: hidden;
+     background-color: #ffffff;
+ }
+
+ .contact-form-section {
+     width: 40%;
+     padding: 30px;
+     background-color: #1e3b57;
+     color: #ffffff;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+
+ .contact-form-section h2 {
+     font-weight: 600;
+     margin-bottom: 20px;
+     font-size: 24px;
+ }
+
+ .form-group {
+     margin-bottom: 15px;
+ }
+
+ .form-group label {
+     display: block;
+     margin-bottom: 5px;
+     font-weight: 400;
+ }
+
+ .form-group input, .form-group textarea {
+     width: 100%;
+     padding: 10px;
+     border-radius: 5px;
+     border: none;
+     background-color: #2a4a65;
+     color: #ffffff;
+     font-size: 14px;
+     resize: none;
+     transition: background-color 0.3s ease;
+ }
+
+ .form-group input:focus, .form-group textarea:focus {
+     outline: none;
+     background-color: #3c5b75;
+ }
+
+ .submit-btn {
+     background-color: #4f91ff;
+     color: #ffffff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+     font-weight: 600;
+     transition: background-color 0.3s;
+     font-size: 16px;
+     align-self: flex-start;
+ }
+
+ .submit-btn:hover {
+     background-color: #3c76d1;
+ }
+
+ .contact-info {
+     margin-top: 20px;
+     font-size: 14px;
+     color: #c2c9d1;
+ }
+
+ /* Map Section */
+ .map-section {
+     width: 60%;
+     position: relative;
+     border-top-right-radius: 8px;
+     border-bottom-right-radius: 8px;
+ }
+
+ .map-container {
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+ }
+
+ .map-container iframe {
+     width: 100%;
+     height: 100%;
+     border: none;
+     border-top-right-radius: 8px;
+     border-bottom-right-radius: 8px;
+ }

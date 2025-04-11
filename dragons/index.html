@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragons</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D2D2D2;
+            background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #25283b22 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #25283b22 100px 101px
+            );
+            background-image: url("https://th.bing.com/th/id/R.0a9d06c2836b7719ae7d36c7a68e697f?rik=M%2bhwSO4QN7PgUQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2faOf1LFU.jpg&ehk=lggzCAzNaVbH52w7PHjhCyvRpNLIaXAUwVmBLyik930%3d&risl=&pid=ImgRaw&r=0");
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url(images/bg.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://freepngimg.com/download/dragon/22099-6-dragon.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/cf100756-828d-41a9-aacb-7c4d2394f048/35294a16-dbd3-44dd-84ee-198ad32f17f5.png" alt=""></div>
+            <div class="item" style="--position: 2"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3d26a519-f4a9-4786-aee3-512857c0481b/dgjnmkf-ae9dd08e-5268-496f-bb4b-19ae06b2a27d.png/v1/fill/w_894,h_894,q_70,strp/draconomicon__1_flashburn_by_saralgam1980_dgjnmkf-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzNkMjZhNTE5LWY0YTktNDc4Ni1hZWUzLTUxMjg1N2MwNDgxYlwvZGdqbm1rZi1hZTlkZDA4ZS01MjY4LTQ5NmYtYmI0Yi0xOWFlMDZiMmEyN2QucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.FDowGQBauuHwxBPq9VbDqHjPis6QO2BnvI_T6PQSY5U" alt=""></div>
+            <div class="item" style="--position: 3"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eae8a3eb-7b8f-4680-a177-64afc2f067b3/dgf2ke0-8c788fee-128f-4876-a705-157d4c6e4559.jpg/v1/fill/w_894,h_894,q_70,strp/celestial_dragon_azriel_by_elka0815_dgf2ke0-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2VhZThhM2ViLTdiOGYtNDY4MC1hMTc3LTY0YWZjMmYwNjdiM1wvZGdmMmtlMC04Yzc4OGZlZS0xMjhmLTQ4NzYtYTcwNS0xNTdkNGM2ZTQ1NTkuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.EeLW4iZ4y4sGGybW7E9ik6yNX6rAIU3gkJ_Y4PDbQxQ" alt=""></div>
+            <div class="item" style="--position: 4"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0427a1a6-ac8d-4ef8-a528-cccfe28d550d/dguaudq-e70c1819-df5a-4863-9b0d-ba0ae995071c.jpg/v1/fill/w_1280,h_1920,q_75,strp/cosmic_void_dragon_by_hyper1art_dguaudq-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTkyMCIsInBhdGgiOiJcL2ZcLzA0MjdhMWE2LWFjOGQtNGVmOC1hNTI4LWNjY2ZlMjhkNTUwZFwvZGd1YXVkcS1lNzBjMTgxOS1kZjVhLTQ4NjMtOWIwZC1iYTBhZTk5NTA3MWMuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.v5Hm1-xXCECJ4SPK76X_FUJcYhjc9Z0tPx4MhKnCWNE" alt=""></div>
+            <div class="item" style="--position: 5"><img src="https://i.pinimg.com/736x/f2/7c/27/f27c27a9a12cd318e7265feca887ef53.jpg" alt=""></div>
+            <div class="item" style="--position: 6"><img src="https://img.freepik.com/premium-photo/dragon-like-creature-generative-ai_902049-46484.jpg" alt=""></div>
+            <div class="item" style="--position: 7"><img src="https://i.pinimg.com/originals/fb/fd/50/fbfd5070d5d8a629824eb285b5751187.jpg" alt=""></div>
+            <div class="item" style="--position: 8"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a3d5aa8a-8207-4b93-8164-3918ffaff346/dfimd50-93f96e7c-7906-480f-a2a2-1d978305346f.png/v1/fill/w_1095,h_730,q_70,strp/chaos_dragon_of_tzeentch_by_nanakoac_dfimd50-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2EzZDVhYThhLTgyMDctNGI5My04MTY0LTM5MThmZmFmZjM0NlwvZGZpbWQ1MC05M2Y5NmU3Yy03OTA2LTQ4MGYtYTJhMi0xZDk3ODMwNTM0NmYucG5nIiwid2lkdGgiOiI8PTE1MzYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.7CakwHInL7OZ05XcRAofw5yu5xV4xDxgn3dndM6F_uk" alt=""></div>
+            <div class="item" style="--position: 9"><img src="https://wallpaperaccess.com/full/27733.jpg" alt=""></div>
+            <div class="item" style="--position: 10"><img src="https://i.pinimg.com/originals/a2/11/04/a21104e3d956ae276f22e4fad02caf8e.jpg" alt=""></div>
+        </div>
+        <div class="content" style="text-align: center;">
+            <h1 style="color: white;">
+                Dragons
+            </h1>
+            <div class="author">
+                <h2>titan_.dev</h2>
+                <p><b>Web Design css</b></p>
+                <p>
+                    The True dragons
+                </p>
+            </div>
+            <div class="model"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

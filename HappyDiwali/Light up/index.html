@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- ===( CODE AASHU )=== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      /* Importing Google font - Sacramento and Poppins */
+      @import url("https://fonts.googleapis.com/css?family=Sacramento|Poppins:300,400,600&display=swap");
+      
+      body {
+        background-image: url('https://example.com/path-to-your-diwali-image.jpg'); /* Replace with your Diwali image URL */
+        background-size: cover; /* Cover the entire background */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent repeating the image */
+        color: #ffffff; /* Default text color */
+        font-family: 'Poppins', sans-serif; /* Change font to Poppins */
+        height: 100vh; /* Full viewport height */
+        margin: 0; /* Remove default margin */
+        display: flex; /* Centering the container */
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        height: 400px; /* Adjusted height for a more spacious layout */
+        width: 600px;
+        position: relative; /* Changed to relative for positioning */
+        text-align: center; /* Center text */
+        backdrop-filter: blur(10px); /* Optional blur effect for the container */
+        border-radius: 20px; /* Rounded corners for the container */
+        padding: 20px; /* Add padding for better spacing */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+      }
+
+      .title {
+        font-size: 4rem; /* Slightly smaller font size */
+        color: rgba(255, 223, 51, 0.9); /* Gold-like color for the title */
+        text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 223, 51, 0.8); /* Enhanced text shadow */
+        margin-bottom: 20px; /* Spacing below the title */
+      }
+
+      button {
+        background-color: #FF9800; /* Bright orange button color */
+        color: white; /* Button text color */
+        font-size: 1.5rem; /* Larger font size */
+        padding: 10px 20px; /* Padding for the button */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
+      }
+
+      button:hover {
+        background-color: #FF5722; /* Darker orange on hover */
+      }
+
+      .fireworks {
+        list-style-type: none;
+        padding: 0;
+      }
+      .fireworks li {
+        display: inline-block;
+        margin: 15px; /* Adjusted margin */
+        height: 50px;
+        width: 50px;
+        border-radius: 500px;
+        position: relative;
+        background-color: #8D6E63; /* Background for fireworks */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+      }
+      .fireworks li::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        background-color: #212121;
+        width: 100%;
+        border-radius: 500px;
+        top: -40%;
+        left: -30%;
+      }
+      .fireworks li::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        background-color: #212121;
+        width: 100%;
+        border-radius: 500px;
+        top: -40%;
+        right: -30%;
+      }
+      .fireworks li span {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-top-right-radius: 50px;
+        transform: rotate(45deg);
+        visibility: hidden; /* Initially hidden */
+        animation: fire 0.3s ease infinite;
+      }
+      .fireworks li:nth-child(1) span {
+        animation-delay: 0.5s;
+      }
+      .fireworks li:nth-child(2) span {
+        animation-delay: 1s;
+      }
+      .fireworks li:nth-child(3) span {
+        animation-delay: 1.5s;
+      }
+      .fireworks li:nth-child(4) span {
+        animation-delay: 2s;
+      }
+      .fireworks li:nth-child(5) span {
+        animation-delay: 2.5s;
+      }
+      .fireworks li:nth-child(6) span {
+        animation-delay: 3s;
+      }
+
+      @keyframes fire {
+        0%, 100% {
+          transform: rotate(55deg);
+          width: 20px;
+          background: linear-gradient(90deg, orange, orangered);
+        }
+        50% {
+          transform: rotate(35deg);
+          width: 18px;
+          background: linear-gradient(90deg, orangered, orange);
+        }
+      }
+    </style>
+    <title>Happy Diwali Wishes Animation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Light up the Diyas</div>
+        <button id="lightButton" onclick="startFireworks()">Light</button>
+        <ul class="fireworks">
+          <li><span></span></li>
+          <li><span></span></li>
+          <li><span></span></li>
+          <li><span></span></li>
+          <li><span></span></li>
+          <li><span></span></li>
+        </ul>
+        <button id="celebrateButton" style="display:none;" onclick="celebrate()"><a href="crackers.html">Celebrate!</a></button>
+    </div>
+
+    <script>
+      function startFireworks() {
+        const fires = document.querySelectorAll('.fireworks li span');  
+        const celebrateButton = document.getElementById('celebrateButton');
+
+        fires.forEach((fire, index) => {
+          setTimeout(() => {
+            fire.style.visibility = 'visible'; // Show fire
+            if (index === fires.length - 1) {
+              // Show the Celebrate button after the last firework
+              setTimeout(() => {
+                celebrateButton.style.display = 'inline-block'; // Make Celebrate button visible
+              }, 500); // Delay to show the button after last firework
+            }
+          }, index * 500); // Delay for each fire
+        });
+      }
+
+      function celebrate() {
+        alert("Happy Diwali! 🎉 Let's celebrate the festival of lights!");
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <div class="tab first">
+                <img src="https://i.pinimg.com/736x/93/cd/36/93cd3699e30d96cd3ba1d9db46f82861.jpg">
+            </div>
+            <div class="tab">
+                <img src="https://i.pinimg.com/736x/79/c6/19/79c619519995d58250d37677e6255b98.jpg">
+            </div>
+            <div class="tab">
+                <img src="https://i.pinimg.com/736x/70/22/fd/7022fde301338644bca180ebce7d51a7.jpg">
+            </div>
+            <div class="tab">
+                <img src="https://i.pinimg.com/736x/aa/51/69/aa5169cd85874ae5d0400b9244437740.jpg">
+            </div>
+           
+            <div class="auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                
+            </div>
+        </div>
+        <div class="manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+    <script>
+        var counter = 1
+        setInterval(function() {
+            document.getElementById('radio' + counter).checked =true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        },3000);
+
+        
+    </script>
+</body>
+
+</html>

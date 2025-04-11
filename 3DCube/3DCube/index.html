@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3D Cube</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="face front"><div class="grid"></div></div>
+            <div class="face back"><div class="grid"></div></div>
+            <div class="face left"><div class="grid"></div></div>
+            <div class="face right"><div class="grid"></div></div>
+            <div class="face top"><div class="grid"></div></div>
+            <div class="face bottom"><div class="grid"></div></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            let cube = document.querySelector('.cube');
+            let grids = document.querySelectorAll('.grid');
+
+            grids.forEach(grid => {
+                for(let i=0; i<100;i++){
+                    let span = document.createElement('span');
+                    grid.appendChild(span);
+                }
+            })            
+
+
+            // Add random active class
+            function addRandomActiveClass(){
+                grids.forEach(grid =>{
+                    let spans = grid.querySelectorAll('span');
+                    let randomIndex = Math.floor(Math.random() * spans.length);
+                    spans[randomIndex].classList.add('active');
+
+                    // Remove active class after a rondom Time
+                    let removeTime = Math.floor(Math.random() * 1000) + 500;
+                    setTimeout(() => {
+                        spans[randomIndex].classList.remove('active');
+                    }, removeTime)
+                });
+            }
+
+            // call addRandomActiveClass function at random interval
+            function randomInterval(){
+                let interval = Math.floor(Math.random() * 200) + 100;
+                addRandomActiveClass();
+                setTimeout(randomInterval, interval)
+            } 
+            randomInterval();
+
+            document.addEventListener('mousemove', (e) =>{
+                let x = e.clientX / window.innerWidth - 0.5;
+                let y = e.clientY / window.innerHeight - 0.5;
+                cube.style.transform = `rotateX(${y * 360}deg) rotateY(${x * 360}deg)`;
+            })
+        })
+    </script>
+</body>
+</html>

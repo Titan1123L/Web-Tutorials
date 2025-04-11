@@ -1,0 +1,21 @@
+body {
+    background: grey;
+}
+
+div {
+    display: flex;
+    padding: 30vh 10vw;
+}
+
+img{
+    margin: 0 20px;
+}
+
+img
+{
+    
+
+    mix-blend-mode: color-burn;
+
+
+}
